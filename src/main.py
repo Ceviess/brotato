@@ -1,4 +1,4 @@
-import numpy as np
+import math
 import streamlit as st
 
 st.title("Dps calculator")
@@ -15,8 +15,9 @@ with col4:
 with col5:
     atk_spd = st.number_input("Attack speed", value=3)
 with col6:
-    result_dmg = int((base_dmg + np.floor(flat_damage * dmg_modifier)) * (1 + dmg_percent / 100)) * (
-            1 + (atk_spd / 100))
+    result_dmg = int(
+        (base_dmg + math.floor(flat_damage * dmg_modifier)) * (1 + dmg_percent / 100)
+    ) * (1 + (atk_spd / 100))
     st.write("Result:", result_dmg)
 
 st.title("EHP calculator")
@@ -29,8 +30,6 @@ with col21:
 with col31:
     dodge = st.number_input("Dodge", value=1)
 with col41:
-    dmg_red = (1 - 1 / (1 + 1 / 15 * armor))
+    dmg_red = 1 - 1 / (1 + 1 / 15 * armor)
     ehp = base_hp / (1 - dmg_red) / (1 - dodge / 100)
     st.write("Result:", ehp)
-
-
