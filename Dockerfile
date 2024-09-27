@@ -6,5 +6,4 @@ RUN pip install streamlit --break-system-packages
 
 COPY src /src
 
-# CMD ["streamlit", "run", "/src/main.py"]
-CMD ["python", '/src/endless.py']
+CMD ["streamlit", "run", "/src/main.py"]
