@@ -10,4 +10,4 @@ RUN pip install streamlit --break-system-packages
 
 COPY src /src
 
-CMD ["python3", "/src/main.py"]
+CMD ["streamlit", "run", "/src/main.py"]
