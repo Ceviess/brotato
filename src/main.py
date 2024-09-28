@@ -5,7 +5,7 @@ st.title("Dps calculator")
 
 col1, col2, col3, col4, col5, col6 = st.columns(6)
 with col1:
-    base_dmg = st.number_input("Base dmg", value=3)
+    base_dmg = st.number_input("Base dmg", value=10)
 with col2:
     flat_damage = st.number_input("Flat damage", value=1)
 with col3:
@@ -79,3 +79,17 @@ with col412:
     dmg_red_1 = 1 - 1 / (1 + 1 / 15 * armor_1)
     ehp_1 = base_hp_1 / (1 - dmg_red_1) / (1 - dodge_1 / 100)
     st.write(" Result:", ehp_1)
+
+col1123, col2123, col3123, col4123 = st.columns(4)
+with col1123:
+    base_hp_2 = st.number_input("  Base hp", value=10)
+with col2123:
+    armor_2 = st.number_input("  Armor", value=1)
+with col3123:
+    dodge_2 = st.number_input("  Dodge", value=1)
+with col4123:
+    dmg_red_2 = 1 - 1 / (1 + 1 / 15 * armor_2)
+    ehp_2 = base_hp_2 / (1 - dmg_red_2) / (1 - dodge_2 / 100)
+    st.write("  Result:", ehp_2)
+
+
